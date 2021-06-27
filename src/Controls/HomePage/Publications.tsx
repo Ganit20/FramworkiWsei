@@ -3,8 +3,6 @@ import {Link} from "react-router-dom";
 import styled from "styled-components";
 import PublicationElement from "./PublicationElement";
 import MainPublication from "./MainPublication";
-import {FontSize} from '../../StyledHelpers/FontSize';
-import {Colors} from '../../StyledHelpers/Colors'
 import {useSelector} from "react-redux";
 import {IState} from "../../Reducers";
 import {IPublicationsReducer} from "../../Reducers/PublicationsReducer";
