@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {FC, useEffect} from "react";
+import {useDispatch} from "react-redux";
+import {getCurrentUser, getUsers} from "./Api/ApiFunctions";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App: FC = () => {
+    const dispatch = useDispatch();
+
+    type GetCurrentUser = ReturnType<typeof getCurrentUser>;
+    type GetUsers = ReturnType<typeof getUsers>;
+
+    useEffect(() => {
+        dispatch<GetCurrentUser>(getCurrentUser());
+        dispatch<GetUsers>(getUsers());
+    });
+
+    return(null);
 }
-
 export default App;
